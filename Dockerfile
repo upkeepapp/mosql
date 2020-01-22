@@ -1,5 +1,10 @@
 FROM ruby:2.5
 
+
+ENV collections="collections.yaml"
+ENV postgres="postgres://sql-server/sql-db"
+ENV mongo="mongodb://mongo-uri"
+
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
@@ -8,8 +13,6 @@ WORKDIR /usr/src/app
 COPY . .
 RUN bundle install
 RUN gem install mosql
-
-
-CMD ["/bin/bash"]
-#mosql --mongo mongodb://node1,node2,node3?readPreference=secondary"]
+RUN chmod 775 start.sh
+CMD ["/usr/src/app/start.sh"]
 
