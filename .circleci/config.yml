@@ -1,0 +1,110 @@
+version: 2
+
+###############################
+# REFERENCES & DEFAULTS
+###############################
+references:
+  restoreCache: &restoreCache
+    restore_cache:
+      keys:
+        - v6-dependencies-{{ checksum "yarn.lock" }}
+        - v6-dependencies- # fallback to using the latest cache if no exact match is found
+  saveCache: &saveCache
+    save_cache:
+      paths:
+        - node_modules
+      key: v6-dependencies-{{ checksum "yarn.lock" }}
+  sshKeys: &sshKeys
+    add_ssh_keys:
+      fingerprints:
+        - "74:6a:20:1e:e9:da:be:d3:c4:16:7a:a4:18:44:a7:dd" # deploy key - for checkout
+        - "d4:e7:f1:dc:59:0d:e1:bd:fb:6a:a9:c0:e0:92:d6:a0" # ssh key (upkeep-ci) - for tagging
+  persistToWorkspace: &persistToWorkspace
+    persist_to_workspace:
+      root: .
+      paths:
+        - node_modules
+##############################
+# JOB DEFINITIONS
+###############################
+jobs:
+  build:
+    docker:
+      - image: $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/base:node-12.13.1
+        aws_auth:
+          aws_access_key_id: $AWS_KEY_ID
+          aws_secret_access_key: $AWS_KEY_SECRET
+    steps:
+      - *sshKeys
+      - checkout
+      - run:
+          name: Tag and cut release
+          command: |
+            # Default to staging
+            DOCKER_TAG=k8s-develop
+
+            # If master, cut a production release
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              # better to install release-it separately
+              # other package dependencies have no use
+              yarn global add release-it@12.3.5
+              yarn create-release -n --git.commitMessage="v%s\n\n[skip ci]"
+
+              # Update the docker tag to the new app version
+              DOCKER_TAG=$(yarn -s output-version)
+
+              # Merge the master branch and this new release into develop
+              COMMIT_SHA=$(git rev-parse HEAD)
+              git checkout develop
+              git pull origin develop
+              git merge --no-edit $COMMIT_SHA
+              git push origin develop
+              git checkout $COMMIT_SHA
+            fi
+
+            # Save reference to docker tag; the deploy script needs this
+            echo export DOCKER_TAG=$DOCKER_TAG >> $BASH_ENV
+            echo export DOCKER_IMAGE=${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/$CIRCLE_PROJECT_REPONAME:$DOCKER_TAG >> $BASH_ENV
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run: |
+          COMMIT_SHA=$(git rev-parse HEAD)
+          ECS_CONFIG=staging
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            ECS_CONFIG=production
+          fi
+          docker build -t $DOCKER_IMAGE --build-arg ENV=$ECS_CONFIG --build-arg COMMIT_SHA=$COMMIT_SHA .
+      - run:
+          name: Push Image to ECR
+          command: |
+              aws configure set region us-east-1
+              aws configure set aws_access_key_id $AWS_KEY_ID
+              aws configure set aws_secret_access_key $AWS_KEY_SECRET
+              aws configure set output json
+              eval $(aws ecr get-login --region us-east-1 --no-include-email)
+              docker push $DOCKER_IMAGE
+###############################
+# WORKFLOW DEFINITIONS
+###############################
+workflows:
+  version: 2
+  test-and-build:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+          filters:
+            tags:
+              ignore:
+                - /.*/
+      - build:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+                - k8s-develop
+                

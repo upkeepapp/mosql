@@ -14,5 +14,5 @@ COPY . .
 RUN bundle install
 RUN gem install mosql
 RUN chmod 775 start.sh
-CMD ["/usr/src/app/start.sh"]
+ENTRYPOINT ["/usr/src/app/start.sh"]
 

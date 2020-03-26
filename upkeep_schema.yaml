@@ -1,0 +1,2306 @@
+upkeep_live:
+  Asset:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - description:
+        :source: Description
+        :type: 'TEXT'
+      - location:
+        :source: Location
+        :type: 'TEXT'
+      - model:
+        :source: Model
+        :type: 'TEXT'
+      - name:
+        :source: Name
+        :type: 'TEXT'
+      - serial:
+        :source: Serial
+        :type: 'TEXT'
+      - additional_information:
+        :source: additionalInformation
+        :type: 'TEXT'
+      - asset_info:
+        :source: assetInfo
+        :type: 'JSONB'
+      - dictionary_from_api_request:
+        :source: dictionaryFromAPIRequest
+        :type: 'JSONB'
+      - is_guest_object:
+        :source: isGuestObject
+        :type: 'TEXT'
+      - last_time_updated_for_number_of_work_orders:
+        :source: lastTimeUpdatedForNumberOfWorkOrders
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - number_of_incomplete_work_orders:
+        :source: numberOfIncompleteWorkOrders
+        :type: 'NUMERIC'
+      - string_upc_number:
+        :source: stringUPCNumber
+        :type: 'TEXT'
+      - username_that_created:
+        :source: usernameThatCreated
+        :type: 'TEXT'
+      - username_assigned_to:
+        :source: usernameAssignedTo
+        :type: 'TEXT'
+      - active_status:
+        :source: activeStatus
+        :type: 'TEXT'
+      - asset_notes:
+        :source: assetNotes
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - purchase_date:
+        :source: purchaseDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - placed_in_service_date:
+        :source: placedInServiceDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - purchase_price:
+        :source: purchasePrice
+        :type: 'NUMERIC'
+      - warranty_expiration:
+        :source: warrantyExpirationDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - residual_price:
+        :source: residualPrice
+        :type: 'Numeric'
+      # new flattened columns
+      - category:
+        :source: category
+        :type: 'TEXT'
+      - image_file:
+        :source: imageFile
+        :type: 'TEXT'
+      - parent_asset:
+        :source: _p_parentAsset
+        :type: 'TEXT'
+      - user_that_created:
+        :source: _p_userThatCreated
+        :type: 'TEXT'
+      - object_location:
+        :source: _p_objectLocation
+        :type: 'TEXT'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - array_of_asset_form_items:
+        :source: arrayOfAssetFormItems
+        :type: 'TEXT'
+      - array_of_sub_assets:
+        :source: arrayOfSubAssets
+        :type: 'TEXT'
+      - array_of_assigned_teams:
+        :source: arrayOfAssignedTeams
+        :type: 'TEXT'
+      - files_for_asset_array:
+        :source: filesForAssetArray
+        :type: 'TEXT'
+      - parts_for_asset_array:
+        :source: partsForAssetArray
+        :type: 'TEXT'
+    :meta:
+      :table: asset
+      :extra_props: JSONB
+  AssetActivityUpdate:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - username_updated:
+        :source: usernameUpdated
+        :type: 'TEXT'
+      - active_status:
+        :source: activeStatus
+        :type: 'TEXT'
+      - event_duration:
+        :source: eventDuration
+        :type: 'BIGINT'
+      - recorded_on:
+        :source: recordedOn
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - manual:
+        :source: manual
+        :type: 'BOOLEAN'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      # new flattened columns
+      - asset_assigned:
+        :source: _p_assetAssigned
+        :type: 'TEXT'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - status_category:
+        :source: statusCategory
+        :type: 'TEXT'
+    :meta:
+      :table: asset_activity_update
+      :extra_props: JSONB
+  CheckList:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - string_check_list_name:
+        :source: stringCheckListName
+        :type: 'TEXT'
+      - string_username_created_by:
+        :source: stringUsernameCreatedBy
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: check_list
+      :extra_props: JSONB
+  DownloadableFormTemplate:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - name:
+        :source: Name
+        :type: 'TEXT'
+      - type:
+        :source: type
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: downloadable_form_template
+      :extra_props: JSONB
+  File:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - original_url:
+        :source: originalURL
+        :type: 'TEXT'
+      - original_name:
+        :source: originalName
+        :type: 'TEXT'
+      - file_type:
+        :source: fileType
+        :type: 'TEXT'
+      - original_platform:
+        :source: originalPlatform
+        :type: 'TEXT'
+      - mime_type:
+        :source: mimeType
+        :type: 'TEXT'
+      - box_file_id:
+        :source: boxFileId
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: file
+      :extra_props: JSONB
+  Form:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - form_field0:
+        :source: formField0
+        :type: 'TEXT'
+      - form_field1:
+        :source: formField1
+        :type: 'TEXT'
+      - form_field2:
+        :source: formField2
+        :type: 'TEXT'
+      - form_field3:
+        :source: formField3
+        :type: 'TEXT'
+      - form_field4:
+        :source: formField4
+        :type: 'TEXT'
+      - form_field5:
+        :source: formField5
+        :type: 'TEXT'
+      - form_field6:
+        :source: formField6
+        :type: 'TEXT'
+      - form_field7:
+        :source: formField7
+        :type: 'TEXT'
+      - form_field8:
+        :source: formField8
+        :type: 'TEXT'
+      - form_name:
+        :source: formName
+        :type: 'TEXT'
+      - is_guest_object:
+        :source: isGuestObject
+        :type: 'TEXT'
+      - number_of_fields:
+        :source: numberOfFields
+        :type: 'NUMERIC'
+      - save_date:
+        :source: saveDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - string_saved_by:
+        :source: stringSavedBy
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: form
+      :extra_props: JSONB
+  FormTemplate:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - name:
+        :source: Name
+        :type: 'TEXT'
+      - form_type:
+        :source: formType
+        :type: 'TEXT'
+      - form_name:
+        :source: formName
+        :type: 'TEXT'
+      - form_value:
+        :source: formValue
+        :type: 'TEXT'
+      - is_request_form_template:
+        :source: isRequestFormTemplate
+        :type: 'TEXT'
+      - request_form_template:
+        :source: requestFormTemplate
+        :type: 'TEXT'
+      - platform_created:
+        :source: platformCreated
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: form_template
+      :extra_props: JSONB
+  InventoryEvent:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - quantity_to_add:
+        :source: quantityToAdd
+        :type: 'NUMERIC'
+      - total_new_quantity:
+        :source: totalNewQuantity
+        :type: 'NUMERIC'
+      - event_date:
+        :source: eventDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - event_note_details:
+        :source: eventNoteDetails
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: inventory_event
+      :extra_props: JSONB
+  Location:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - latitude:
+        :source: latitude
+        :type: 'NUMERIC'
+      - longitude:
+        :source: longitude
+        :type: 'NUMERIC'
+      - string_address:
+        :source: stringAddress
+        :type: 'TEXT'
+      - string_name:
+        :source: stringName
+        :type: 'TEXT'
+      - username_that_created:
+        :source: usernameThatCreated
+        :type: 'TEXT'
+      - hide_map:
+        :source: hideMap
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      # new flattened columns
+      - root_location:
+        :source: _p_rootLocation
+        :type: 'TEXT'
+      - user_that_created:
+        :source: _p_userThatCreated
+        :type: 'TEXT'
+      - array_of_assigned_teams:
+        :source: arrayOfAssignedTeams
+        :type: 'TEXT'
+      - array_of_assigned_users:
+        :source: arrayOfAssignedUsers
+        :type: 'TEXT'
+      - array_of_assigned_vendors:
+        :source: arrayOfAssignedVendors
+        :type: 'TEXT'
+      - array_of_assigned_customers:
+        :source: arrayOfAssignedCustomers
+        :type: 'TEXT'
+      - array_of_sublocations:
+        :source: arrayOfSublocations
+        :type: 'TEXT'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+    :meta:
+      :table: location
+      :extra_props: JSONB
+  Message:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - username_sender:
+        :source: usernameSender
+        :type: 'TEXT'
+      - username_to:
+        :source: usernameTo
+        :type: 'TEXT'
+      - text:
+        :source: text
+        :type: 'TEXT'
+      - is_read_by_receiver:
+        :source: isReadByReceiver
+        :type: 'TEXT'
+      - content_type:
+        :source: contentType
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: message
+      :extra_props: JSONB
+  Meter:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - name:
+        :source: name
+        :type: 'TEXT'
+      - units:
+        :source: units
+        :type: 'TEXT'
+      - update_frequency:
+        :source: updateFrequency
+        :type: 'NUMERIC'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      # new flattened columns
+      - last_meter_reading:
+        :source: _p_lastMeterReading
+        :type: 'TEXT'
+      - asset_assigned:
+        :source: _p_assetAssigned
+        :type: 'TEXT'
+      - location_assigned:
+        :source: _p_locationAssigned
+        :type: 'TEXT'
+      - user_created:
+        :source: _p_userCreated
+        :type: 'TEXT'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - array_of_meter_notifications:
+        :source: arrayOfMeterNotifications
+        :type: 'TEXT'
+    :meta:
+      :table: meter
+      :extra_props: JSONB
+  MeterNotification:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - status:
+        :source: status
+        :type: 'TEXT'
+      - meter_option_id:
+        :source: meterOptionId
+        :type: 'TEXT'
+      - title:
+        :source: title
+        :type: 'TEXT'
+      - description:
+        :source: description
+        :type: 'TEXT'
+      - notification_value:
+        :source: notificationValue
+        :type: 'NUMERIC'
+      - last_value_for_work_order:
+        :source: lastValueForWorkOrder
+        :type: 'NUMERIC'
+      - inactive:
+        :source: inactive
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: meter_notification
+      :extra_props: JSONB
+  Transactions:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - event:
+        :source: event
+        :type: 'TEXT'
+      - post_data:
+        :source: postData
+        :type: 'JSON'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: transactions
+      :extra_props: JSONB
+  MeterReading:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - meter_date:
+        :source: meterDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - meter_value:
+        :source: meterValue
+        :type: 'NUMERIC'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      # new flattened columns
+      - root_meter:
+        :source: _p_rootMeter
+        :type: 'TEXT'
+      - user_created:
+        :source: _p_userCreated
+        :type: 'TEXT'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+    :meta:
+      :table: meter_reading
+      :extra_props: JSONB
+  Part:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - additional_information:
+        :source: additionalInformation
+        :type: 'TEXT'
+      - is_guest_object:
+        :source: isGuestObject
+        :type: 'TEXT'
+      - part_info:
+        :source: partInfo
+        :type: 'JSON'
+      - string_upc_number:
+        :source: stringUPCNumber
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: part
+      :extra_props: JSONB
+  Project:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - is_a_new_project:
+        :source: isANewProject
+        :type: 'TEXT'
+      - string_assigned_by:
+        :source: stringAssignedBy
+        :type: 'TEXT'
+      - main_description:
+        :source: mainDescription
+        :type: 'TEXT'
+      - note:
+        :source: note
+        :type: 'TEXT'
+      - number_of_people:
+        :source: numberOfPeople
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      # new flattened columns
+      - project_role:
+        :source: _p_projectRole
+        :type: 'TEXT'
+    :meta:
+      :table: project
+      :extra_props: JSONB
+  Referral:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - sender_id:
+        :source: senderId
+        :type: 'TEXT'
+      - sender_email:
+        :source: senderEmail
+        :type: 'TEXT'
+      - receiver_email:
+        :source: receiverEmail
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: referral
+      :extra_props: JSONB
+  UserLocation:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - latitude:
+        :source: latitude
+        :type: 'NUMERIC'
+      - longitude:
+        :source: longitude
+        :type: 'NUMERIC'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: user_location
+      :extra_props: JSONB
+  _Role:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - name:
+        :source: name
+        :type: 'TEXT'
+      - the_project_role_name:
+        :source: theProjectRoleName
+        :type: 'TEXT'
+      - username_made_by:
+        :source: usernameMadeBy
+        :type: 'TEXT'
+      - company_work_order_count:
+        :source: companyWorkOrderCount
+        :type: 'NUMERIC'
+      - number_of_people:
+        :source: numberOfPeople
+        :type: 'TEXT'
+      - special_user:
+        :source: specialUser
+        :type: 'BOOLEAN'
+      - special_user_in_app_date:
+        :source: specialUserInAppDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - special_user_length:
+        :source: specialUserLength
+        :type: 'TEXT'
+      - special_discount:
+        :source: specialDiscount
+        :type: 'TEXT'
+      - currency_dictionary:
+        :source: currencyDictionary
+        :type: 'JSON'
+      - requester_visibility:
+        :source: requesterVisibility
+        :type: 'TEXT'
+      - company_name:
+        :source: companyName
+        :type: 'TEXT'
+      - special_user_plan:
+        :source: specialUserPlan
+        :type: 'TEXT'
+      - no_of_people:
+        :source: noOfPeople
+        :type: 'NUMERIC'
+      - company_business_type:
+        :source: companyBusinessType
+        :type: 'TEXT'
+      - monnit_auth_key:
+        :source: monnitAuthKey
+        :type: 'TEXT'
+      - custom_names:
+        :source: customNames
+        :type: 'JSON'
+      - custom_id:
+        :source: customId
+        :type: 'TEXT'
+      - time_zone:
+        :source: timeZone
+        :type: 'TEXT'
+      - slack_team_id:
+        :source: slackTeamId
+        :type: 'TEXT'
+      - company_secret:
+        :source: companySecret
+        :type: 'TEXT'
+      - category_request_form_item_allowed:
+        :source: categoryRequestFormItemAllowed
+        :type: 'TEXT'
+      - asset_request_form_item_allowed:
+        :source: assetRequestFormItemAllowed
+        :type: 'TEXT'
+      - user_request_form_item_allowed:
+        :source: userRequestFormItemAllowed
+        :type: 'TEXT'
+      - due_date_request_form_item_allowed:
+        :source: dueDateRequestFormItemAllowed
+        :type: 'TEXT'
+      - team_request_form_item_allowed:
+        :source: teamRequestFormItemAllowed
+        :type: 'TEXT'
+      - location_request_form_item_allowed:
+        :source: locationRequestFormItemAllowed
+        :type: 'TEXT'
+      - no_of_users:
+        :source: noOfUsers
+        :type: 'NUMERIC'
+      - warm_lead:
+        :source: warmLead
+        :type: 'BOOLEAN'
+      - business_name:
+        :source: businessName
+        :type: 'TEXT'
+      - business_address_line1:
+        :source: businessAddressLine1
+        :type: 'TEXT'
+      - business_city:
+        :source: businessCity
+        :type: 'TEXT'
+      - business_state:
+        :source: businessState
+        :type: 'TEXT'
+      - business_zip_code:
+        :source: businessZipCode
+        :type: 'TEXT'
+      - business_country:
+        :source: businessCountry
+        :type: 'TEXT'
+      - free_user_postcard:
+        :source: freeUserPostcard
+        :type: 'BOOLEAN'
+      - business_address_line2:
+        :source: businessAddressLine2
+        :type: 'TEXT'
+      - premium_user_postcard:
+        :source: premiumUserPostcard
+        :type: 'BOOLEAN'
+      - is_phone_number_required_for_public_request:
+        :source: isPhoneNumberRequiredForPublicRequest
+        :type: 'BOOLEAN'
+      - is_name_required_for_public_request:
+        :source: isNameRequiredForPublicRequest
+        :type: 'BOOLEAN'
+      - are_assets_visible_publically:
+        :source: areAssetsVisiblePublically
+        :type: 'BOOLEAN'
+      - are_locations_visible_publically:
+        :source: areLocationsVisiblePublically
+        :type: 'BOOLEAN'
+      - are_users_visible_publically:
+        :source: areUsersVisiblePublically
+        :type: 'BOOLEAN'
+      - are_categories_visible_publically:
+        :source: areCategoriesVisiblePublically
+        :type: 'BOOLEAN'
+      - are_teams_visible_publically:
+        :source: areTeamsVisiblePublically
+        :type: 'BOOLEAN'
+      - is_special_user:
+        :source: isSpecialUser
+        :type: 'BOOLEAN'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - example_work_order_count:
+        :source: exampleWorkOrderCount
+        :type: 'NUMERIC'
+      - company_id:
+        :source: _p_companyID
+        :type: 'TEXT'
+      - special_subscription:
+        :source: _p_specialSubscription 
+        :type: 'TEXT'
+    :meta:
+      :table: _role
+      :extra_props: JSONB
+  _Session:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - restricted:
+        :source: restricted
+        :type: 'BOOLEAN'
+      - installation_id:
+        :source: installationId
+        :type: 'TEXT'
+      - session_token:
+        :source: sessionToken
+        :type: 'TEXT'
+      - expires_at:
+        :source: expiresAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_with:
+        :source: createdWith
+        :type: 'JSON'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: _session
+      :extra_props: JSONB
+  _User:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - username:
+        :source: username
+        :type: 'TEXT'
+      - password:
+        :source: password
+        :type: 'TEXT'
+      - email:
+        :source: email
+        :type: 'TEXT'
+      - email_verified:
+        :source: emailVerified
+        :type: 'BOOLEAN'
+      - auth_data:
+        :source: authData
+        :type: 'JSON'
+      - additional:
+        :source: additional
+        :type: 'TEXT'
+      - company_secret:
+        :source: companySecret
+        :type: 'TEXT'
+      - company_secret_id:
+        :source: companySecretID
+        :type: 'TEXT'
+      - date_of_last_login:
+        :source: dateOfLastLogin
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - email_guest:
+        :source: emailGuest
+        :type: 'TEXT'
+      - first_name:
+        :source: firstName
+        :type: 'TEXT'
+      - is_guest:
+        :source: isGuest
+        :type: 'TEXT'
+      - job_title:
+        :source: jobTitle
+        :type: 'TEXT'
+      - last_message:
+        :source: lastMessage
+        :type: 'TEXT'
+      - last_name:
+        :source: lastName
+        :type: 'TEXT'
+      - last_updated_message:
+        :source: lastUpdatedMessage
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - phone_number:
+        :source: phoneNumber
+        :type: 'TEXT'
+      - the_password:
+        :source: thePassword
+        :type: 'TEXT'
+      - user_account_type:
+        :source: userAccountType
+        :type: 'TEXT'
+      - platform_signup:
+        :source: platformSignup
+        :type: 'TEXT'
+      - signup_company:
+        :source: signup_company
+        :type: 'TEXT'
+      - new_company_signup:
+        :source: newCompanySignup
+        :type: 'TEXT'
+      - slack_access_token:
+        :source: slackAccessToken
+        :type: 'TEXT'
+      - selected_slack_channel:
+        :source: selectedSlackChannel
+        :type: 'TEXT'
+      - updated_premium_ini_os:
+        :source: updatedPremiumIniOS
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - single_user_length:
+        :source: singleUserLength
+        :type: 'TEXT'
+      - disable_emails:
+        :source: disableEmails
+        :type: 'TEXT'
+      - disable_daily_emails:
+        :source: disableDailyEmails
+        :type: 'TEXT'
+      - is_super_user:
+        :source: isSuperUser
+        :type: 'BOOLEAN'
+      - is_enterprise:
+        :source: isEnterprise
+        :type: 'BOOLEAN'
+      - user_status:
+        :source: userStatus
+        :type: 'TEXT'
+      - dictionary_of_times:
+        :source: dictionaryOfTimes
+        :type: 'JSON'
+      - company_business_type:
+        :source: companyBusinessType
+        :type: 'TEXT'
+      - default_assign_due_date:
+        :source: defaultAssignDueDate
+        :type: 'TEXT'
+      - default_require_signature:
+        :source: defaultRequireSignature
+        :type: 'TEXT'
+      - is_view_shared_orders:
+        :source: isViewSharedOrders
+        :type: 'BOOLEAN'
+      - default_purchase_data:
+        :source: defaultPurchaseData
+        :type: 'JSON'
+      - declined_postcard_pop_up:
+        :source: declinedPostcardPopUp
+        :type: 'BOOLEAN'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - settings:
+        :source: settings
+        :type: 'JSONB'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - customer:
+        :source: _p_customer
+        :type: 'TEXT'
+      - vendor:
+        :source: _p_vendor
+        :type: 'TEXT'
+    :meta:
+      :table: _user
+      :extra_props: JSONB
+  exportFile:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - type:
+        :source: type
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: export_file
+      :extra_props: JSONB
+  partInventory:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - string_part_cost:
+        :source: stringPartCost
+        :type: 'TEXT'
+      - string_part_description:
+        :source: stringPartDescription
+        :type: 'TEXT'
+      - string_part_name:
+        :source: stringPartName
+        :type: 'TEXT'
+      - string_part_quantity:
+        :source: stringPartQuantity
+        :type: 'TEXT'
+      - string_part_serial_number:
+        :source: stringPartSerialNumber
+        :type: 'TEXT'
+      - string_serial_number:
+        :source: stringSerialNumber
+        :type: 'TEXT'
+      - additional_part_details:
+        :source: additionalPartDetails
+        :type: 'TEXT'
+      - minimum_part_quantity:
+        :source: minimumPartQuantity
+        :type: 'TEXT'
+      - string_bin:
+        :source: stringBin
+        :type: 'TEXT'
+      - string_area:
+        :source: stringArea
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      # new flattened columns
+      - number_part_quantity:
+        :source: numberPartQuantity
+        :type: 'TEXT'
+      - number_part_cost:
+        :source: numberPartCost
+        :type: 'TEXT'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+    :meta:
+      :table: part_inventory
+      :extra_props: JSONB
+  sharedWorkOrder:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - sender_company_id:
+        :source: senderCompanyId
+        :type: 'TEXT'
+      - work_order_id:
+        :source: workOrderId
+        :type: 'TEXT'
+      - sender_email:
+        :source: senderEmail
+        :type: 'TEXT'
+      - contractor_email:
+        :source: contractorEmail
+        :type: 'TEXT'
+      - revoked:
+        :source: revoked
+        :type: 'BOOLEAN'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: shared_work_order
+      :extra_props: JSONB
+  signUpAnalytics:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - timestamp_date:
+        :source: timestampDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - business_type_distribution:
+        :source: businessTypeDistribution
+        :type: 'JSONB'
+      - string_date:
+        :source: stringDate
+        :type: 'TEXT'
+      - ios_signups:
+        :source: iosSignups
+        :type: 'NUMERIC'
+      - web_signups:
+        :source: webSignups
+        :type: 'NUMERIC'
+      - android_signups:
+        :source: androidSignups
+        :type: 'NUMERIC'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: sign_up_analytics
+      :extra_props: JSONB
+  workOrder:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - clone_recurring_schedule_name:
+        :source: cloneRecurringScheduleName
+        :type: 'TEXT'
+      - date_completed:
+        :source: dateCompleted
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - dictionary_of_form_names_and_values:
+        :source: dictionaryOfFormNamesAndValues
+        :type: 'JSONB'
+      - due_date:
+        :source: dueDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - form_id:
+        :source: formID
+        :type: 'TEXT'
+      - form_name:
+        :source: formName
+        :type: 'TEXT'
+      - is_a_check_list:
+        :source: isACheckList
+        :type: 'TEXT'
+      - is_advanced:
+        :source: isAdvanced
+        :type: 'TEXT'
+      - is_already_added:
+        :source: isAlreadyAdded
+        :type: 'TEXT'
+      - is_complete:
+        :source: isComplete
+        :type: 'TEXT'
+      - is_flagged:
+        :source: isFlagged
+        :type: 'TEXT'
+      - is_flagged_work_order:
+        :source: isFlaggedWorkOrder
+        :type: 'TEXT'
+      - is_guest_object:
+        :source: isGuestObject
+        :type: 'TEXT'
+      - is_updated:
+        :source: isUpdated
+        :type: 'TEXT'
+      - main_description:
+        :source: mainDescription
+        :type: 'TEXT'
+      - note:
+        :source: note
+        :type: 'TEXT'
+      - number_cost:
+        :source: numberCost
+        :type: 'NUMERIC'
+      - number_time:
+        :source: numberTime
+        :type: 'NUMERIC'
+      - priority_number:
+        :source: priorityNumber
+        :type: 'NUMERIC'
+      - recurring_schedule:
+        :source: recurringSchedule
+        :type: 'TEXT'
+      - recurring_schedule_name:
+        :source: recurringScheduleName
+        :type: 'TEXT'
+      - show_company:
+        :source: showCompany
+        :type: 'TEXT'
+      - string_assigned_by:
+        :source: stringAssignedBy
+        :type: 'TEXT'
+      - string_check_list_name:
+        :source: stringCheckListName
+        :type: 'TEXT'
+      - string_complete_work_order_additional_details:
+        :source: stringCompleteWorkOrderAdditionalDetails
+        :type: 'TEXT'
+      - string_completed_by:
+        :source: stringCompletedBy
+        :type: 'TEXT'
+      - string_cost:
+        :source: stringCost
+        :type: 'TEXT'
+      - string_has_form:
+        :source: stringHasForm
+        :type: 'TEXT'
+      - string_time:
+        :source: stringTime
+        :type: 'TEXT'
+      - the_dictionary_of_dates_already_added:
+        :source: theDictionaryOfDatesAlreadyAdded
+        :type: 'JSONB'
+      - type:
+        :source: type
+        :type: 'TEXT'
+      - updated_by:
+        :source: updatedBy
+        :type: 'TEXT'
+      - username_string_assigned_to:
+        :source: usernameStringAssignedTo
+        :type: 'TEXT'
+      - is_saved:
+        :source: isSaved
+        :type: 'TEXT'
+      - longitude:
+        :source: longitude
+        :type: 'NUMERIC'
+      - string_name:
+        :source: stringName
+        :type: 'TEXT'
+      - latitude:
+        :source: latitude
+        :type: 'NUMERIC'
+      - string_address:
+        :source: stringAddress
+        :type: 'TEXT'
+      - username_that_created:
+        :source: usernameThatCreated
+        :type: 'TEXT'
+      - current_status:
+        :source: currentStatus
+        :type: 'TEXT'
+      - form_type:
+        :source: formType
+        :type: 'TEXT'
+      - form_value:
+        :source: formValue
+        :type: 'TEXT'
+      - is_asset:
+        :source: isAsset
+        :type: 'TEXT'
+      - is_requesting:
+        :source: isRequesting
+        :type: 'TEXT'
+      - string_total_cost:
+        :source: stringTotalCost
+        :type: 'TEXT'
+      - work_order_number:
+        :source: workOrderNumber
+        :type: 'TEXT'
+      - clone_recurring_work_order_number:
+        :source: cloneRecurringWorkOrderNumber
+        :type: 'TEXT'
+      - user_object_id_first_created:
+        :source: userObjectIdFirstCreated
+        :type: 'TEXT'
+      - end_due_date:
+        :source: endDueDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - category_type:
+        :source: categoryType
+        :type: 'TEXT'
+      - requires_signature:
+        :source: requiresSignature
+        :type: 'NUMERIC'
+      - dictionary_of_user_ids_with_read_status:
+        :source: dictionaryOfUserIdsWithReadStatus
+        :type: 'JSONB'
+      - archived_status:
+        :source: archivedStatus
+        :type: 'TEXT'
+      - visible_to_company:
+        :source: visibleToCompany
+        :type: 'TEXT'
+      - timer_status_dictionary:
+        :source: timerStatusDictionary
+        :type: 'JSONB'
+      - requester_email_address:
+        :source: requesterEmailAddress
+        :type: 'TEXT'
+      - username:
+        :source: username
+        :type: 'TEXT'
+      - is_paid:
+        :source: isPaid
+        :type: 'BOOLEAN'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      # new flattened columns
+      - cancelled_request:
+        :source: cancelledRequest
+        :type: TEXT
+      - is_recurring:
+        :source: isRecurring
+        :type: 'TEXT'
+      - recurring_frequency:
+        :source: recurringFrequency
+        :type: 'TEXT'
+      - next_due_date:
+        :source: nextDueDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - next_due_completion_date:
+        :source: nextDueCompletionDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - next_due_date_ended:
+        :source: nextDueDateEnded
+        :type: 'TEXT'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - user_assigned_to:
+        :source: _p_userAssignedTo
+        :type: 'TEXT'
+      - object_assigned_by:
+        :source: _p_objectAssignedBy
+        :type: 'TEXT'
+      - object_completed_by:
+        :source: _p_objectCompletedBy
+        :type: 'TEXT'
+      - object_location_for_work_order:
+        :source: _p_objectLocationForWorkOrder
+        :type: 'TEXT'
+      - object_asset:
+        :source: _p_objectAsset
+        :type: 'TEXT'
+      - object_project:
+        :source: _p_objectProject
+        :type: 'TEXT'
+      - form_template:
+        :source: _p_formTemplate
+        :type: 'TEXT'
+      - array_of_support_users:
+        :source: arrayOfSupportUsers
+        :type: 'TEXT'
+      - array_of_parts:
+        :source: arrayOfParts
+        :type: 'TEXT'
+      - array_of_part_quantity:
+        :source: arrayOfPartQuanitity
+        :type: 'TEXT'
+      - array_of_update_items:
+        :source: arrayOfUpdateItems
+        :type: 'TEXT'
+      # few more additions for reports
+      - duration:
+        :source: duration
+        :type: 'NUMERIC'
+      - root_original_work_order:
+        :source: _p_rootOriginalWorkOrder
+        :type: 'TEXT'
+      - purchase_orders:
+        :source: purchaseOrders
+        :type: 'TEXT'
+      - use_last_completed_child:
+        :source: useLastCompletedChild
+        :type: 'TEXT'
+    :meta:
+      :table: work_order
+      :extra_props: JSONB
+  zapSubscription:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - role_id:
+        :source: roleId
+        :type: 'TEXT'
+      - url:
+        :source: url
+        :type: 'TEXT'
+      - user_id:
+        :source: userId
+        :type: 'TEXT'
+      - event:
+        :source: event
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: zap_subscription
+      :extra_props: JSONB
+  superUser:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: super_user
+      :extra_props: JSONB
+  _Join:roles:_Role:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: owningId
+        :type: 'TEXT'
+      - owning_role_id:
+        :source: relatedId
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: join_roles_role
+  _Join:users:_Role:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: owningId
+        :type: 'TEXT'
+      - user_id:
+        :source: relatedId
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: join_users_role
+  Company:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - object_id:
+        :source: objectId
+        :type: 'TEXT'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - stripe_customer_id:
+        :source: stripeCustomerID
+        :type: 'TEXT'
+      - plan:
+        :source: plan
+        :type: 'TEXT'
+      - no_of_people:
+        :source: noOfPeople
+        :type: 'NUMERIC'
+      - initially_assigned_by_username:
+        :source: initiallyAssignedByUsername
+        :type: 'TEXT'
+      - subscription_id:
+        :source: subscriptionID
+        :type: 'TEXT'
+      - current_period_start:
+        :source: currentPeriodStart
+        :type: 'NUMERIC'
+      - current_period_end:
+        :source: currentPeriodEnd
+        :type: 'NUMERIC'
+      - canceled_at:
+        :source: canceledAt
+        :type: 'NUMERIC'
+      - active_until:
+        :source: activeUntil
+        :type: 'NUMERIC'
+      - status:
+        :source: status
+        :type: 'TEXT'
+      - special_user_plan:
+        :source: specialUserPlan
+        :type: 'TEXT'
+      - special_user_in_app_date:
+        :source: specialUserInAppDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - special_discount:
+        :source: specialDiscount
+        :type: 'TEXT'
+      - special_user_length:
+        :source: specialUserLength
+        :type: 'TEXT'
+      - is_special_user:
+        :source: isSpecialUser
+        :type: 'BOOLEAN'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: company
+      :extra_props: JSONB
+  review:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - non_company_user_email:
+        :source: nonCompanyUserEmail
+        :type: 'TEXT'
+      - work_order_completed_by:
+        :source: _p_workOrderCompletedBy
+        :type: 'TEXT'
+      - feedback:
+        :source: feedback
+        :type: 'TEXT'
+      - company_user:
+        :source: _p_companyUser
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - work_order_id:
+        :source: workOrderId
+        :type: 'TEXT'
+      - is_provided_by_requester:
+        :source: isProvidedByRequester
+        :type: 'BOOLEAN'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - rating:
+        :source: rating
+        :type: 'NUMERIC'
+      - date_completed:
+        :source: dateCompleted
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - work_order:
+        :source: _p_workOrder
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+    :meta:
+      :table: review
+      :extra_props: JSONB
+  WorkOrderTimerTracking:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - work_order:
+        :source: _p_workOrder
+        :type: 'TEXT'
+      - user:
+        :source: _p_user
+        :type: 'TEXT'
+      - category:
+        :source: _p_category
+        :type: 'TEXT'
+      - status:
+        :source: status
+        :type: 'TEXT'
+      - timestamp:
+        :source: timestamp
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_by:
+        :source: _p_createdBy
+        :type: 'TEXT'
+      - deleted_by:
+        :source: _p_deletedBy
+        :type: 'TEXT'
+      - duration:
+        :source: duration
+        :type: 'NUMERIC'
+      - add_to_total_time:
+        :source: addToTotalTime
+        :type: 'BOOLEAN'
+      - add_to_total_cost:
+        :source: addToTotalCost
+        :type: 'BOOLEAN'
+      - hourly_cost:
+        :source: hourlyCost
+        :type: 'NUMERIC'
+    :meta:
+      :table: work_order_timer_tracking
+      :extra_props: JSONB
+  WorkOrderTimerCategory:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - custom:
+        :source: custom
+        :type: 'BOOLEAN'
+      - name:
+        :source: name
+        :type: 'TEXT'
+      - color:
+        :source: color
+        :type: 'TEXT'
+    :meta:
+      :table: work_order_timer_category
+      :extra_props: JSONB
+  WorkOrderCostCategory:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - custom:
+        :source: custom
+        :type: 'BOOLEAN'
+      - name:
+        :source: name
+        :type: 'TEXT'
+      - color:
+        :source: color
+        :type: 'TEXT'
+    :meta:
+      :table: work_order_cost_category
+      :extra_props: JSONB
+  WorkOrderCost:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - work_order:
+        :source: _p_workOrder
+        :type: 'TEXT'
+      - user:
+        :source: _p_user
+        :type: 'TEXT'
+      - category:
+        :source: _p_category
+        :type: 'TEXT'
+      - recorded_on:
+        :source: recordedOn
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_by:
+        :source: _p_createdBy
+        :type: 'TEXT'
+      - deleted_by:
+        :source: _p_deletedBy
+        :type: 'TEXT'
+      - price:
+        :source: price
+        :type: 'NUMERIC'
+      - included_in_total_cost:
+        :source: includedInTotalCost
+        :type: 'BOOLEAN'
+      - info:
+        :source: info
+        :type: 'TEXT'
+    :meta:
+      :table: work_order_cost_tracking
+      :extra_props: JSONB
+  AssetCategory:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - name:
+        :source: name
+        :type: 'TEXT'
+      - role:
+        :source: _p_role
+        :type: 'TEXT'
+      - deleted_by:
+        :source: _p_deletedBy
+        :type: 'TEXT'
+    :meta:
+      :table: asset_category
+      :extra_props: JSONB
+  AssetTracking:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - asset:
+        :source: _p_asset
+        :type: 'TEXT'
+      - user:
+        :source: _p_user
+        :type: 'TEXT'
+      - status:
+        :source: status
+        :type: 'TEXT'
+      - note:
+        :source: note
+        :type: 'TEXT'
+      - deleted_by:
+        :source: _p_deletedBy
+        :type: 'TEXT'
+    :meta:
+      :table: asset_tracking
+      :extra_props: JSONB
+  Vendor:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - vendor_type:
+        :source: vendorType
+        :type: 'TEXT'
+      - array_of_fields:
+        :source: arrayOfFields
+        :type: 'JSONB'
+      - business_name:
+        :source: businessName
+        :type: 'TEXT'
+      - user_id:
+        :source: _p_user
+        :type: 'TEXT'
+      - main_point_of_contact:
+        :source: mainPointOfContact
+        :type: 'TEXT'
+      - updated_by:
+        :source: _p_updatedBy
+        :type: 'TEXT'
+      - business_address :
+        :source: businessAddress
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - phone_number:
+        :source: phoneNumber
+        :type: 'TEXT'
+      - website:
+        :source: website
+        :type: 'TEXT'
+      - business_description:
+        :source: businessDescription
+        :type: 'TEXT'
+      - email:
+        :source: email
+        :type: 'TEXT'
+      - created_by:
+        :source: _p_createdBy
+        :type: 'TEXT'
+    :meta:
+      :table: vendor
+      :extra_props: JSONB
+  Customer:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - billing_address_line_1:
+        :source: billingAddressLine1
+        :type: 'TEXT'
+      - billing_address_line_2:
+        :source: billingAddressLine2
+        :type: 'TEXT'
+      - billing_address_line_3:
+        :source: billingAddressLine3
+        :type: 'TEXT'
+      - billing_name:
+        :source: billingName
+        :type: 'TEXT'
+      - array_of_fields:
+        :source: arrayOfFields
+        :type: 'JSONB'
+      - customer_name:
+        :source: customerName
+        :type: 'TEXT'
+      - user_id:
+        :source: _p_user
+        :type: 'TEXT'
+      - currency:
+        :source: currency
+        :type: 'JSONB'
+      - updated_by:
+        :source: _p_updatedBy
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - customer_address:
+        :source: customerAddress
+        :type: 'TEXT'
+      - phone_number:
+        :source: phoneNumber 
+        :type: 'TEXT'
+      - customer_type:
+        :source: customerType
+        :type: 'TEXT'
+      - website:
+        :source: website
+        :type: 'TEXT'
+      - email:
+        :source: email
+        :type: 'TEXT'
+      - created_by:
+        :source: _p_createdBy
+        :type: 'TEXT'
+    :meta:
+      :table: customer
+      :extra_props: JSONB
+  WorkOrderStatusUpdate:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - previous_status:
+        :source: previousStatus
+        :type: 'TEXT'
+      - current_status:
+        :source: currentStatus
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - updated_by_id:
+        :source: _p_updatedBy
+        :type: 'TEXT'
+      - work_order_id:
+        :source: _p_workOrder
+        :type: 'TEXT'
+    :meta:
+      :table: work_order_status_update
+      :extra_props: JSONB
+  PurchaseOrder:
+    :columns:
+      - id:
+        :source: _id
+        :type: 'TEXT'
+      - updated_at:
+        :source: _updated_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_at:
+        :source: _created_at
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - created_by:
+        :source: createdBy
+        :type: 'TEXT'
+      - deleted_by:
+        :source: deletedBy
+        :type: 'TEXT'
+      - deleted_at:
+        :source: deletedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - approved_at:
+        :source: approvedAt
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - approved_by:
+        :source: approvedBy
+        :type: 'TEXT'
+      - role_id:
+        :source: _p_role
+        :type: 'TEXT'
+      - acl:
+        :source: _acl
+        :type: 'JSONB'
+      - requester_email:
+        :source: requesterEmail
+        :type: 'TEXT'
+      - parts:
+        :source: parts
+        :type: 'TEXT'
+      - part_quantities:
+        :source: partQuantities
+        :type: 'TEXT'
+      - title:
+        :source: title
+        :type: 'TEXT'
+      - notes:
+        :source: notes
+        :type: 'TEXT'
+      - due_date:
+        :source: dueDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - tax:
+        :source: tax
+        :type: 'NUMERIC'
+      - po_date:
+        :source: poDate
+        :type: 'TIMESTAMP WITH TIME ZONE'
+      - company_name:
+        :source: companyName
+        :type: 'TEXT'
+      - company_street:
+        :source: companyStreet
+        :type: 'TEXT'
+      - vendor:
+        :source: vendor
+        :type: 'TEXT'
+      - requisitioner:
+        :source: requisitioner
+        :type: 'TEXT'
+      - updates:
+        :source: updates
+        :type: 'TEXT'
+      - show_company_logo:
+        :source: showCompanyLogo
+        :type: 'BOOLEAN'
+      - shipping_method:
+        :source: shippingMethod
+        :type: 'TEXT'
+      - shipping_company:
+        :source: shippingCompany
+        :type: 'TEXT'
+      - shipping_cost:
+        :source: shippingCost
+        :type: 'NUMERIC'
+      - shipping_street:
+        :source: shippingStreet
+        :type: 'TEXT'
+      - total_quantity:
+        :source: totalQuantity
+        :type: 'NUMERIC'
+      - subtotal:
+        :source: subtotal
+        :type: 'NUMERIC'
+      - total_cost:
+        :source: totalCost
+        :type: 'NUMERIC'
+      - other_cost:
+        :source: otherCost
+        :type: 'NUMERIC'
+      - status:
+        :source: status
+        :type: 'TEXT'
+      - partial_fulfill_history:
+        :source: partialFulfillHistory
+        :type: 'TEXT'
+      - purchase_order_number:
+        :source: purchaseOrderNumber
+        :type: 'NUMERIC'
+      - fob_point:
+        :source: fobPoint
+        :type: 'TEXT'
+    :meta:
+      :table: purchase_order
+      :extra_props: JSONB
