@@ -88,19 +88,9 @@ jobs:
 ###############################
 workflows:
   version: 2
-  test-and-build:
+  build:
     jobs:
-      - test
       - build:
-          requires:
-            - test
-          filters:
-            tags:
-              ignore:
-                - /.*/
-      - build:
-          requires:
-            - test
           filters:
             branches:
               only:
