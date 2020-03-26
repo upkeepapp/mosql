@@ -32,8 +32,8 @@ jobs:
     docker:
       - image: $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/base:node-12.13.1
         aws_auth:
-          aws_access_key_id: $AWS_KEY_ID
-          aws_secret_access_key: $AWS_KEY_SECRET
+          aws_access_key_id: $ECR_API
+          aws_secret_access_key: $ECR_SECRET
     steps:
       - *sshKeys
       - checkout
@@ -78,8 +78,8 @@ jobs:
           name: Push Image to ECR
           command: |
               aws configure set region us-east-1
-              aws configure set aws_access_key_id $AWS_KEY_ID
-              aws configure set aws_secret_access_key $AWS_KEY_SECRET
+              aws configure set aws_access_key_id $ECR_API
+              aws configure set aws_secret_access_key $ECR_SECRET
               aws configure set output json
               eval $(aws ecr get-login --region us-east-1 --no-include-email)
               docker push $DOCKER_IMAGE
