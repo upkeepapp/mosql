@@ -97,4 +97,4 @@ workflows:
                 - master
                 - develop
                 - k8s-develop
-                
+                - k8s-develop-rebased
