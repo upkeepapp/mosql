@@ -41,7 +41,7 @@ jobs:
           name: Tag and cut release
           command: |
             # Default to staging
-            DOCKER_TAG=k8s-develop
+            DOCKER_TAG=${CIRCLE_BRANCH}
 
             # If master, cut a production release
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
@@ -93,8 +93,6 @@ workflows:
       - build:
           filters:
             branches:
-              only:
-                - master
+              ignore:
                 - develop
-                - k8s-develop
-                - k8s-develop-rebased
+                - master
